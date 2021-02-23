@@ -38,7 +38,6 @@ devices = scanner.scan(10.0)
 
 for dev in devices:
    #print(dev.addr)
-   #if toscan in dev.addr:
    if voiture2ble in dev.addr:
        voiture2 = True
    if voiture1ble in dev.addr:
@@ -49,14 +48,11 @@ for dev in devices:
 if voiture2 == True:
    topic = "maison/voiture/voiture2"
    message = "home"
-   #print ('Topic',topic)
-   #print('Publishing ' + message)
    publish.single(topic, message, hostname="ipMQTT", port=1883, auth={"username":"identifiant", "password":"motdepasse"}, tls=None)
 
 if voiture2 == False:
    topic = "maison/voiture/voiture2"
    message = "not_home"
-   #print('Publishing ' + message)
    publish.single(topic, message, hostname="ipMQTT", port=1883, auth={"username":"identifiant", "password":"motdepasse"}, tls=None)
 
 if voiture1 == True:
@@ -67,18 +63,14 @@ if voiture1 == True:
 if voiture1 == False:
    topic = "maison/voiture/voiture1"
    message = "not_home"
-   #print('Publishing ' + message)
    publish.single(topic, message, hostname="ipMQTT", port=1883, auth={"username":"identifiant", "password":"motdepasse"}, tls=None)
 
 if poubellejaune == True:
    topic = "maison/presence/poubellejaune"
    message = "home"
-   #print ('Topic',topic)
-   #print('Publishing ' + message)
    publish.single(topic, message, hostname="ipMQTT", port=1883, auth={"username":"identifiant", "password":"motdepasse"}, tls=None)
 
 if poubellejaune == False:
    topic = "maison/presence/poubellejaune"
    message = "not_home"
-   #print('Publishing ' + message)
    publish.single(topic, message, hostname="ipMQTT", port=1883, auth={"username":"identifiant", "password":"motdepasse"}, tls=None)
