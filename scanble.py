@@ -8,8 +8,6 @@ except:
     print('You do not have mqtt installed, which is needed to talk to the broker.')
     print('Install using sudo pip3 install paho-mqtt')
 
-base_topic = "blemqtt/"  # MQTT Topic
-
 voiture1=False
 voiture2=False
 poubellejaune=False
